@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Login</title>
+    <style>
+        /* Global Styles */
+        *,
+        *::before,
+        *::after {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          text-decoration: none;
+        }
+        
+        html {
+          font-size: 16px; /* Define your base font size */
+          scroll-behavior: smooth;
+          position: relative;
+          overflow-x: hidden;
+          background-color: #EDEEE9;
+        }
+        
+        body {
+          background-color: #EDEEE9;
+          color: #303030;
+          font-family: 'Inter', sans-serif;
+          min-height: 100vh;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; /* Center content horizontally */
+          padding: 2.5vh 10vw;
+        }
+        
+        h1 {
+          font-size: clamp(1rem, 6vw, 10rem);
+          margin: 15vh 0 2rem;
+          text-align: center;
+        }
+        
+        form {
+          width: 100%;
+          max-width: 320px; /* Adjusted for better form width */
+          background-color: #ffffff; /* Form background color */
+          padding: 2rem;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          text-align: left; /* Align form content to the left */
+        }
+        
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          color: #303030;
+          font-size: 0.875rem;
+        }
+        
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+          width: 100%;
+          height: 3rem;
+          padding: 0.5rem 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid #D8DBCE;
+          border-radius: 4px;
+          font-size: 1rem;
+          transition: border-color 0.3s ease;
+        }
+        
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+          outline: none;
+          border-color: #303030;
+        }
+        
+        input[type="submit"] {
+          background-color: #303030;
+          color: #ffffff;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          border: none;
+        }
+        
+        input[type="submit"]:hover {
+          background-color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <h1>Staff Login</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label for="email">Email</label>
+        <input type="email" placeholder="Enter your email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter your password" id="password" name="password" required>
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

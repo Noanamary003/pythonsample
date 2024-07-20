@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Table</title>
+    <style>
+        /* Optional: Some basic styling for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Simple Table Example</h2>
+    <table>
+        <tr>
+            <th>username</th>
+            <th>email</th>
+            <th>delete</th>
+        </tr>
+        {% for i in user2 %}
+        <tr>
+            <td>{{i.username}}</td>
+            <td>{{i.email}}</td>
+            <td><a href="/delete2/{{i.id}}">delete</a>></td>
+        </tr>
+        {% endfor %}
+
+        
+    </table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Table</title>
+    <style>
+        /* Optional: Some basic styling for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Simple Table Example</h2>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>model</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>delete</th>
+            <th>add to cart</th>
+        </tr>
+        {% for i in user %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.model}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.quantity}}</td>
+            <td><a href="/delete3/{{i.id}}">delete</a>></td>
+            <td><a href="/cart/{{i.id}}">add to cart</a>></td>
+        </tr>
+        {% endfor %}
+
+        
+    </table>
+</body>
+</html>
